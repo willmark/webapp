@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Sample
+    </title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="scripts/require-2.1.11.js"></script>
+  </head>
+  <body>
+
+          <form id="contact-form" action="javascript:console.log('sending message')" class="form row clearfix">
+            <aside class="col gu4">
+              <fieldset>
+                <label for="contact-form-name">
+                  Name
+                </label>
+                <input id="contact-form-name" type="text" name="name" class="required input-medium">
+              </fieldset>
+              <fieldset>
+                <label for="contact-form-email">
+                  Email
+                  <em style="display:none;">
+                    (required)
+                  </em>
+                </label>
+                <input id="contact-form-email" type="text" name="email" class="required input-medium email">
+              </fieldset>
+              <div class="clearfix">
+              </div>
+              <fieldset>
+                <label for="contact-form-subject">
+                  Subject
+                </label>
+                <input id="contact-form-subject" type="text" name="subject" class="input-medium required">
+              </fieldset>
+            </aside>
+            <aside id="aside-message" class="col gu7">
+              <fieldset class="">
+                <label for="contact-form-message">
+                  Message
+                </label>
+                <textarea id="contact-form-message" rows="9"  name="message" class="required input-big">
+                </textarea>
+              </fieldset>
+              <p>
+               <button class="bt-form" onclick="javascript:require(['scripts/post'], function (post) { post.send('/message', post.form(document.getElementById('contact-form')), function(response) {console.log(response)} )})">
+                  Send E-mail
+               </button>
+              </p>
+            </aside>
+          </form>
+   </body>
+ </html>
